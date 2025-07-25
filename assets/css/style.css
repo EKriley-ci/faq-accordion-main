@@ -48,7 +48,7 @@ main .faq{
     color: hsl(292, 42%, 14%);
     gap: 10px;
     font-weight: 700;
-    font-size: 1.7rem;
+    font-size: 2rem;
 }
 
 .faq_menu{
