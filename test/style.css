@@ -1,0 +1,79 @@
+:root{
+    font-size: 15px;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #eeedeb;
+    overflow: hidden;
+}
+
+.menu{
+    width: 300px;
+    height: auto;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.menu .btn{
+    display: block;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.menu .submenu{
+    background-color: #19929f6e;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .8s ease-out;
+}
+
+.menu .submenu a{
+    display: block;
+    padding: 1rem;
+    position: relative; 
+
+}
+
+.menu .submenu a::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    opacity: 0;
+    transition:  all .5s;
+}
+
+.submenu a:hover{
+    background-color: #29b77a;
+    padding-left: calc(1rem + 5px);
+}
+
+.menu .submenu a:hover::before{
+    opacity: 1;
+}
+
+.item:target .submenu{
+    max-height: 20rem;
+}

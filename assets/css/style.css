@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "work sans", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: hsl(275, 100%, 97%);
+    font-size: 1rem;
+}
+
+main{
+    min-width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+main .head-bg{
+    min-height: 36vh;
+    background: url(../images/background-pattern-desktop.svg);
+}
+
+main .faq{
+    width: 100%;
+    align-self: center;
+    background: hsl(0, 100%, 100%);
+    padding: 1rem;
+    max-width: 500px;
+    position: absolute;
+    top: 60%;
+    border-radius: .6rem;
+    display: grid;
+    min-height: 50vh;
+    grid-template-rows: auto 1fr;
+    box-shadow: 0 8px 24px 0 rgba(40, 18, 70, 0.15);
+}
+
+.main .faq .faq_head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(292, 42%, 14%);
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+
+.faq_menu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq_menu .question{
+    border-top: 1px solid rgba(0, 0, 0, 0.112);
+}
+strong{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+    padding: .5rem 0;
+}
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .8s ease-out;
+    opacity: 0;
+    color: hsl(292, 16%, 49%);
+}
+.minus, .plus{
+    cursor: pointer;
+    transition: display .5s ease-in;
+    max-height: 24px;
+    max-width: 24px;
+}
+.question .minus{
+    display: none;
+}
+.question:target .answer{
+    max-height:20rem;
+    transition: max-height .8s ease-in;
+    opacity: 1;
+}
+.question:target .minus{
+    display: block;
+}
+.question:target .plus{
+    display: none;
+}
+
+@media screen and (max-width:767px){
+    main .head-bg{
+        background: url(../images/background-pattern-mobile.svg);
+    }
+    main .faq{
+        max-width: 80%;
+    }
+}
